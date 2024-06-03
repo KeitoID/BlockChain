@@ -22,12 +22,14 @@ class Block
 
         $this->hash = $this->calculateHash();
     }
-    
+
+    // ハッシュの計算
     public function calculateHash(): string 
     {
         return hash(self::HASH_ALGO, $this->originalData);
     }
 
+    // 各データを文字列にして結合
     private function convertToOriginalData(
         int $index, 
         int $timeStamp, 
